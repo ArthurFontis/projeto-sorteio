@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Sorteio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Sorteador</h1>
+
     <div id="primeira">
         <button id="sorteiov">Sortear número de 0 a 20</button>
-        <p><p>Número sorteado: <span id="resultadov">?</span></p></p>
+        <p>Número sorteado: <span id="resultadov">?</span></p>
     </div>
+
     <div>
         <button id="sorteioc">Sortear número de 0 a 50</button>
-        <p><p>Número sorteado: <span id="resultadoc">?</span></p></p>
+        <p>Número sorteado: <span id="resultadoc">?</span></p>
     </div>
+
     <div>
         <button id="sorteioce">Sortear número de 0 a 100</button>
-        <p><p>Número sorteado: <span id="resultadoce">?</span></p></p>
+        <p>Número sorteado: <span id="resultadoce">?</span></p>
     </div>
     <script> 
-        function randomNumberV(min = 0, max = 20){
-            const valor = Math.random() * (max - min) + min;
-            return Math.floor(valor);
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
+
         document.getElementById("sorteiov").addEventListener("click", function() {
-            const numeroSorteadoV = randomNumberV();
-            document.getElementById("resultadov").textContent = numeroSorteadoV;
+            document.getElementById("resultadov").textContent = randomNumber(0, 20);
         });
-        function randomNumberC(min = 0, max = 50){
-            const valor = Math.random() * (max - min) + min;
-            return Math.floor(valor);
-        }
+
         document.getElementById("sorteioc").addEventListener("click", function() {
-            const numeroSorteadoC = randomNumberC();
-            document.getElementById("resultadoc").textContent = numeroSorteadoC;
+            document.getElementById("resultadoc").textContent = randomNumber(0, 50);
         });
-        function randomNumberCe(min = 0, max = 100 ){
-            const valor = Math.random() * (max - min) + min;
-            return Math.floor(valor);
-        }
+
         document.getElementById("sorteioce").addEventListener("click", function() {
-            const numeroSorteadoCe = randomNumberCe();
-            document.getElementById("resultadoce").textContent = numeroSorteadoCe;
+            document.getElementById("resultadoce").textContent = randomNumber(0, 100);
         });
     </script>
 </body>
